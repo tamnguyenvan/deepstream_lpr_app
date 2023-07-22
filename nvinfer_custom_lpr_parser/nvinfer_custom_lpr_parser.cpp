@@ -63,6 +63,7 @@ bool NvDsInferParseCustomNVPlate(std::vector<NvDsInferLayerInfo> const &outputLa
 
     setlocale(LC_CTYPE, "");
 
+    cout << "here" << endl;
     if(!dict_ready) {
         fdict.open("dict.txt");
         if(!fdict.is_open())
@@ -81,6 +82,7 @@ bool NvDsInferParseCustomNVPlate(std::vector<NvDsInferLayerInfo> const &outputLa
     }
 
     int layer_size = outputLayersInfo.size();
+    cout << "layer_size: " << layer_size << endl;
 
     LPR_attr.attributeConfidence = 1.0;
 
