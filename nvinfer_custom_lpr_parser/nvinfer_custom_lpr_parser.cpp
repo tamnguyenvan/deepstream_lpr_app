@@ -36,7 +36,43 @@ using std::string;
 using std::vector;
 
 static bool dict_ready=false;
-std::vector<string> dict_table;
+std::vector<string> dict_table = {
+	"0",
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9",
+	"A",
+	"B",
+	"C",
+	"D",
+	"E",
+	"F",
+	"G",
+	"H",
+	"I",
+	"J",
+	"K",
+	"L",
+	"M",
+	"N",
+	"P",
+	"Q",
+	"R",
+	"S",
+	"T",
+	"U",
+	"V",
+	"W",
+	"X",
+	"Y",
+	"Z"
+};
 
 extern "C"
 {
@@ -63,26 +99,25 @@ bool NvDsInferParseCustomNVPlate(std::vector<NvDsInferLayerInfo> const &outputLa
 
     setlocale(LC_CTYPE, "");
 
-    cout << "here" << endl;
-    if(!dict_ready) {
-        fdict.open("dict.txt");
-        if(!fdict.is_open())
-        {
-            cout << "open dictionary file failed." << endl;
-	        return false;
-        }
-	    while(!fdict.eof()) {
-	        string strLineAnsi;
-	        if ( getline(fdict, strLineAnsi) ) {
-	            dict_table.push_back(strLineAnsi);
-	        }
-        }
-        dict_ready=true;
-        fdict.close();
-    }
+    // if(!dict_ready) {
+    //     fdict.open("dict.txt");
+    //     if(!fdict.is_open())
+    //     {
+    //         cout << "open dictionary file failed." << endl;
+	   //      return false;
+    //     }
+	   //  while(!fdict.eof()) {
+	   //      string strLineAnsi;
+	   //      if ( getline(fdict, strLineAnsi) ) {
+	   //          dict_table.push_back(strLineAnsi);
+	   //      }
+    //     }
+    //     dict_ready=true;
+    //     fdict.close();
+    // }
+    dict_ready = true;
 
     int layer_size = outputLayersInfo.size();
-    cout << "layer_size: " << layer_size << endl;
 
     LPR_attr.attributeConfidence = 1.0;
 
