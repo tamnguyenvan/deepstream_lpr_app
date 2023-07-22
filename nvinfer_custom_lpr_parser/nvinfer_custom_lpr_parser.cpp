@@ -118,7 +118,6 @@ bool NvDsInferParseCustomNVPlate(std::vector<NvDsInferLayerInfo> const &outputLa
     dict_ready = true;
 
     int layer_size = outputLayersInfo.size();
-    cout << "layer_size: " << layer_size << endl;
 
     LPR_attr.attributeConfidence = 1.0;
 
@@ -180,7 +179,6 @@ bool NvDsInferParseCustomNVPlate(std::vector<NvDsInferLayerInfo> const &outputLa
         for (unsigned int count = 0; count < valid_bank_count; count++) {
             LPR_attr.attributeConfidence *= bank_softmax_max[count];
         }
-	cout << "attrString: " << attrString << endl;
         attrList.push_back(LPR_attr);
     }
 
