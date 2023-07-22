@@ -118,6 +118,7 @@ bool NvDsInferParseCustomNVPlate(std::vector<NvDsInferLayerInfo> const &outputLa
     dict_ready = true;
 
     int layer_size = outputLayersInfo.size();
+    cout << "layer_size: " << layer_size << endl;
 
     LPR_attr.attributeConfidence = 1.0;
 
@@ -169,6 +170,7 @@ bool NvDsInferParseCustomNVPlate(std::vector<NvDsInferLayerInfo> const &outputLa
             attrString += dict_table[str_idxes[id]];
         }
     }
+    cout << "attrString: " << attrString << endl;
 
     //Ignore the short string, it may be wrong plate string
     if (valid_bank_count >=  3) {
