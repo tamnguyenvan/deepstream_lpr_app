@@ -170,7 +170,6 @@ bool NvDsInferParseCustomNVPlate(std::vector<NvDsInferLayerInfo> const &outputLa
             attrString += dict_table[str_idxes[id]];
         }
     }
-    cout << "attrString: " << attrString << endl;
 
     //Ignore the short string, it may be wrong plate string
     if (valid_bank_count >=  3) {
@@ -181,6 +180,7 @@ bool NvDsInferParseCustomNVPlate(std::vector<NvDsInferLayerInfo> const &outputLa
         for (unsigned int count = 0; count < valid_bank_count; count++) {
             LPR_attr.attributeConfidence *= bank_softmax_max[count];
         }
+	cout << "attrString: " << attrString << endl;
         attrList.push_back(LPR_attr);
     }
 
